@@ -10,7 +10,7 @@ permissions:
 jobs:
   test:
     name: Stack validation
-    if: github.repository == 'damap-org/damap-deployment' && github.ref == 'refs/heads/master'
+    if: github.repository == 'damap-org/damap-demo' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -31,7 +31,7 @@ jobs:
   deploy:
     name: Stack deployment
     needs: test
-    if: github.repository == 'damap-org/damap-deployment' && github.ref == 'refs/heads/master'
+    if: github.repository == 'damap-org/damap-demo' && github.ref == 'refs/heads/master'
     runs-on: [self-hosted, linux, damap-deploy]
     timeout-minutes: 20
 
